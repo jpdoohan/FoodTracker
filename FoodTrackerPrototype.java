@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Calendar;
 
 public class FoodTrackerPrototype {
-GDFGD
+
     public static void main(String[] args) { //main
         Scanner scanner = new Scanner(System.in); //scanner object
 
