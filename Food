@@ -1,0 +1,93 @@
+package FoodTracker;
+import java.time.LocalDate;
+
+/****
+ * Created by lucy brolly
+ * Created  on 11/11/2024
+ *Program to show food description
+ */
+public class Food {
+LocalDate staticDate= LocalDate.of(2024,11,16);
+   private String name;
+   private String type;
+   private LocalDate useByDate;
+   private  double cost;
+   private int quantity;
+   private boolean vegetarian;
+
+
+   public Food(){
+
+
+   }
+
+      public Food(String itsName, String itsType){
+         name= itsName;
+         type= itsType;
+
+
+   }
+   public Food(String itsName, String itsType, LocalDate itsUseByDate){
+      name= itsName;
+      type= itsType;
+      useByDate = itsUseByDate;
+      // constructor for name of food, its type and useByDate
+
+
+   }
+   public Food(String itsName, String itsType,double itsCost ){
+      name= itsName;
+      type= itsType;
+
+      cost= itsCost;
+   }// constructor as above plus cost
+   public Food(String itsName, String itsType,double itsCost, int itsQuantity ) {
+      name = itsName;
+      type = itsType;
+
+      cost = itsCost;
+      quantity= itsQuantity;
+   } // constructor as above plus quantity
+
+   public Food(String itsName, String itsType, double itsCost, int itsQuantity,
+               boolean isItVegetarian){
+      name = itsName;
+      type = itsType;
+
+      cost = itsCost;
+      quantity= itsQuantity;
+      vegetarian= isItVegetarian;
+
+   }
+   public void printInfo(){
+      System.out.println("The name of the food is " + name);
+      System.out.println("The type of food is " + type);
+      System.out.println("The cost of the item is " + cost);
+      System.out.println("Quantity of items equals " + quantity);
+      if(vegetarian==true) {
+         System.out.println("This item is vegetarian");
+      }else {
+         System.out.println("This item is not vegetarian");
+      }
+   }
+
+
+
+
+
+
+   public String getName() {
+      return name;
+   }// get method for name
+
+  public String getType() {
+     return type;
+  }// get method for type
+
+   public static void main(String [] args){
+
+
+
+
+   }//main
+}//class   
