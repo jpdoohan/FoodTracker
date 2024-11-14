@@ -1,0 +1,40 @@
+package FoodTracker;
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+/****
+ ***** Created by lucy brolly
+ *   created on 11/11/2024
+ ***
+ ****/
+public class TestFood {
+
+   public static void main(String [] args){
+
+
+
+      Food myFood= new Food("chicken","meat");
+      Food yourFood= new Food("Yogurts","Dairy",2.99,6);
+      Food herFood= new Food("Ham","cooked meat",3.99,1);
+      Food hisFood= new Food("Lasagne","Microwave meal",5.99,1,true);
+
+      System.out.println("myfood");
+      myFood.printInfo();
+      System.out.println("+++++++++++++++");
+      System.out.println("your food");
+      yourFood.printInfo();
+      System.out.println("============");
+      System.out.println("herFood");
+      herFood.printInfo();
+      System.out.println("++++++++++");
+      System.out.println("hisFood");
+      hisFood.printInfo();
+      System.out.println("===========");
+
+
+
+
+
+
+   }//main
+}//class   
