@@ -1,0 +1,28 @@
+***** Created by lucy 
+ * Created on 15/11/2024
+ *Shows Pizza variations
+ ****/
+public class Pizza extends Food{
+   private String size;
+   private boolean toppings;
+
+   public Pizza(String itsName, String itsType, double itsCost, String itsSize, boolean itsToppings){
+      super(itsName,itsType,itsCost);
+      size=itsSize;
+      toppings= itsToppings;
+
+   }
+   public  String getSize(){
+      return size;
+   }
+   public boolean getToppings(){
+      return toppings;
+   }
+   
+   
+
+   public static void main(String [] args){
+
+
+   }//main
+}//class   
