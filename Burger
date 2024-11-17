@@ -1,0 +1,28 @@
+package FoodTracker;
+
+/****
+ ***** Created by lucy
+ * Created on 15/11/2024
+ *Show different burgers, varying meats
+ ****/
+public class Burger extends Food {
+    private String type;
+   private boolean cheese;
+
+   public Burger(String itsName, String itsType, double itsCost,int itsQuantity,
+                 boolean itsVegetarian, String itsSize, boolean itsCheese) {
+      super(itsName, itsType, itsCost, itsQuantity, itsVegetarian);
+      cheese = itsCheese;
+   }
+
+   public boolean hasCheese(){
+      return cheese;
+   }
+   public String getType(){
+      return type;
+   }
+   public static void main(String [] args){
+
+
+   }//main
+}//class   
