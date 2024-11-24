@@ -1,15 +1,17 @@
 ***** Created by lucy 
  * Created on 15/11/2024
+updated 22/11/2024
  *Shows Pizza variations
  ****/
-public class Pizza extends Food{
+public class Pizza extends Fridge{
    private String size;
    private boolean toppings;
 
-   public Pizza(String itsName, String itsType, double itsCost, String itsSize, boolean itsToppings){
-      super(itsName,itsType,itsCost);
-      size=itsSize;
-      toppings= itsToppings;
+   public Pizza(String itsName, String itsType, LocalDate itsPurchaseDate, LocalDate itsExpirationDate, String itsSize){
+      super(itsName,itsType,itsPurchaseDate, itsExpirationDate);
+
+      size= itsSize;
+
 
    }
    public  String getSize(){
