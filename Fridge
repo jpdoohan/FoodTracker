@@ -1,0 +1,51 @@
+package FoodTracker;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class Fridge {
+   // Instance variables
+   private String name;
+   private String type;
+   private LocalDate purchaseDate;
+   private LocalDate expirationDate;
+
+   // Constructor to initialize the food item with name, type, dates
+   public Fridge(String itsName, String itsType, LocalDate itsPurchaseDate, LocalDate itsExpirationDate) {
+      name = itsName;
+      type = itsType;
+      purchaseDate = itsPurchaseDate;
+      expirationDate = itsExpirationDate;
+   }
+
+   // Method to calculate days remaining until expiration
+   public long calculateDaysLeft() {
+      LocalDate currentDate = LocalDate.now();  // Get today's date
+      return java.time.temporal.ChronoUnit.DAYS.between(currentDate, expirationDate);
+   }
+
+   // Method to display the food details and days remaining
+   public void displayFoodInfo() {
+      long daysLeft = calculateDaysLeft();
+
+      // Display the food information
+      System.out.println("Food: " + name);
+      System.out.println("Type: " + type);
+      System.out.println("Purchased on: " + purchaseDate);
+      System.out.println("Expires on: " + expirationDate);
+
+      // Display the result based on the number of days left
+      if (daysLeft > 0) {
+         System.out.println("Days remaining until expiration: " + daysLeft);
+      } else if (daysLeft == 0) {
+         System.out.println("The food expires today.");
+      } else {
+         System.out.println("The food has already expired by " + Math.abs(daysLeft) + " days.");
+      }
+   }
+
+   public static void main(String[] args) {
+
+   }
+}
+
