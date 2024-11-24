@@ -1,0 +1,40 @@
+ackage FoodTracker;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+/****
+ ***** Created by lucy
+ * Created on 24/11/2024
+ ****New program to take inpuy of food/dates and show time left
+ ****/
+public class TestFridge {
+   public static void main(String [] args){
+      Scanner scanner = new Scanner(System.in);
+
+      // Prompt for the food name
+      System.out.println("Enter the food name: ");
+      String name = scanner.nextLine();
+
+      // Prompt for the food type (e.g., Fruit, Dairy, etc.)
+      System.out.println("Enter the food type: ");
+      String type = scanner.nextLine();
+
+      // Prompt for the purchase date
+      System.out.println("Enter the purchase date (YYYY-MM-DD): ");
+      String purchaseDateString = scanner.nextLine();
+      LocalDate purchaseDate = LocalDate.parse(purchaseDateString); // Parse string to LocalDate
+
+      // Prompt for the expiration date
+      System.out.println("Enter the expiration date (YYYY-MM-DD): ");
+      String expirationDateString = scanner.nextLine();
+      LocalDate expirationDate = LocalDate.parse(expirationDateString); // Parse string to LocalDate
+
+      // Create a Food object using the constructor
+      Fridge foodItem = new Fridge(name, type, purchaseDate, expirationDate);
+
+      // Display the food information
+      foodItem.displayFoodInfo();
+
+
+
