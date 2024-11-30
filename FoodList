@@ -1,0 +1,40 @@
+package Lab6;
+import java.util.*;
+/****
+ ***** Created by lucy 
+ * Created on 30/11/2024
+ ** Program to show use of array lists ro add, food and remove
+ ****/
+public class ArrayType {
+   public static void main(String [] args){
+
+      String [] food= {"chicken", "bacon","apples"};
+
+      List<String> list= new ArrayList<>(Arrays.asList(food));
+
+      // Print the initial list
+      System.out.println("Original list:");
+      for (String f : list) {
+         System.out.println(f);
+      }
+
+      // Add new food items to the list
+      list.add("Pizza");
+      list.add("Beef");
+
+      // Remove an item from the list
+      list.remove("bacon");
+
+      // Print the modified list
+      System.out.println("\nModified list:");
+      for (String f : list) {
+         System.out.println(f);
+      }
+
+
+
+
+
+
+   }//main
+}//class   
