@@ -97,11 +97,11 @@ public class fridge {
 
     //display fridge contents - status 1
     protected void printFridge() {
-        for (int index = 0; index < arraySize; index++) {
+        for (int index = 0; index < getArraySize(); index++) {
             System.out.println("------------------");
-            System.out.println("You have a " + vegetables[index] + " that goes off on "
-                    + day[index] + "." + month[index] + "." + year[index] + ".\nYou have "
-                    + daysLeftArray[index] + " days left to eat this yummy vegetable.");
+            System.out.println("You have a " + getVegetables()[index] + " that goes off on "
+                    + getDay()[index] + "." + getMonth()[index] + "." + getYear()[index] + ".\nYou have "
+                    + getDaysLeft()[index] + " days left to eat this yummy vegetable.");
         }
     }
 
@@ -109,39 +109,39 @@ public class fridge {
     protected void updateFridge() {
         //initial prompt for array amount
         System.out.println("Enter how many veg you would like to store today:");
-        arraySize = scanner.nextInt();
+        setArraySize(scanner.nextInt());
 
-        for (int index = 0; index < arraySize; index++) {
+        for (int index = 0; index < getArraySize(); index++) {
             System.out.println("Enter vegetable name: ");
-            vegetables[index] = scanner.next();
+            getVegetables()[index] = scanner.next();
             System.out.println("Enter day: ");
-            day[index] = scanner.nextInt();
+            getDay()[index] = scanner.nextInt();
             System.out.println("Enter month: ");
-            month[index] = scanner.nextInt();
+            getMonth()[index] = scanner.nextInt();
             System.out.println("Enter year: ");
-            year[index] = scanner.nextInt();
+            getYear()[index] = scanner.nextInt();
             LocalDate today = LocalDate.now();
-            LocalDate endDate = LocalDate.of(year[index], month[index], day[index]);
-            daysLeftArray[index] = (int) java.time.temporal.ChronoUnit.DAYS.between(today, endDate);
+            LocalDate endDate = LocalDate.of(getYear()[index], getMonth()[index], getDay()[index]);
+            getDaysLeft()[index] = (int) java.time.temporal.ChronoUnit.DAYS.between(today, endDate);
         }
     }
 
     //overall loop
     protected void menuLoop() {
         do {
-            if (menuStatus == 0) {  //default menu
+            if (getMenuStatus() == 0) {  //default menu
                 defaultMenu();
-            } else if (menuStatus == 1) {   //display fridge contents
+            } else if (getMenuStatus() == 1) {   //display fridge contents
                 printFridge();
-                menuStatus = 0;
-            } else if (menuStatus == 2) { //update fridge contents
+                setMenuStatus(0);
+            } else if (getMenuStatus() == 2) { //update fridge contents
                 updateFridge();
                 printFridge();
-                menuStatus = 0;
+                setMenuStatus(0);
             } else {
                 System.out.println("OUT OF BOUNDS");
-                menuStatus = 0;
+                setMenuStatus(0);
             }
-        }while(menuStatus !=-1);
+        }while(getMenuStatus() !=-1);
     }
 }
